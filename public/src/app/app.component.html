@@ -20,9 +20,9 @@
           <div fxFlex="initial" fxHide.gt-xs>
             <button mat-icon-button [matMenuTriggerFor]="navMenu"><mat-icon>more_vert</mat-icon></button>
             <mat-menu #navMenu="matMenu">
-              <button mat-menu-item>Home</button>
-              <button mat-menu-itegitm>About</button>
-              <button mat-menu-item>Resume</button>
+              <button mat-menu-item disabled>Home</button>
+              <button mat-menu-item disabled>About</button>
+              <a mat-menu-item [routerLink]="">Resume</a>
             </mat-menu>
           </div>
         </div>
