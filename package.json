@@ -1,0 +1,26 @@
+{
+  "name": "resume",
+  "version": "0.1.0",
+  "description": "My resume site",
+  "author": "Paul Nevill",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:ng && npm run grunt:build",
+    "grunt:build": "grunt build",
+    "build:ng": "npm run build --prefix public"
+  },
+  "dependencies": {
+    "kraken-js": "^2.0.0",
+    "construx": "^1.0.0",
+    "construx-copier": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.12.2",
+    "lodash": "^4.17.11",
+    "serve-index": "^1.9.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-config-dir": "^0.3.2",
+    "grunt-contrib-compress": "^1.4.3"
+  }
+}

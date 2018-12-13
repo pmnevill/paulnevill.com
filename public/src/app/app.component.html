@@ -1,0 +1,95 @@
+<mat-sidenav-container fullscreen hasBackdrop>
+  <mat-sidenav #sidenav mode="over" position="end">
+    <mat-toolbar>Projects</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="http://christmas-list.paulnevill.com">Christmas List</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="column">
+    <mat-toolbar fxFlex="none" color="primary" class="mat-elevation-z10">
+      <div fxFlex fxLayoutAlign="space-between center">
+        <div fxFlex fxLayout fxLayoutGap.gt-xs="100px" fxLayoutGap.lt-sm="10px" fxLayoutAlign="start center">
+          <div fxFlex="initial">
+            <h1 fxFlex>Paul Nevill</h1>
+          </div>
+          <div fxFlex="initial" fxHide.lt-sm fxLayoutGap="5px">
+            <button mat-button disabled>Home</button>
+            <button mat-button disabled>About</button>
+            <a mat-button [routerLink]="">Resume</a>
+          </div>
+          <div fxFlex="initial" fxHide.gt-xs>
+            <button mat-icon-button [matMenuTriggerFor]="navMenu"><mat-icon>more_vert</mat-icon></button>
+            <mat-menu #navMenu="matMenu">
+              <button mat-menu-item>Home</button>
+              <button mat-menu-itegitm>About</button>
+              <button mat-menu-item>Resume</button>
+            </mat-menu>
+          </div>
+        </div>
+        <div fxFlex="initial">
+          <button fxFlex="initial" mat-icon-button (click)="sidenav.toggle()"><mat-icon>apps</mat-icon></button>
+          <button fxFlex="initial" mat-icon-button disabled><mat-icon>account_circle</mat-icon></button>
+        </div>
+      </div>
+    </mat-toolbar>
+    <div fxFlex fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="30px">
+      <div [ngStyle.gt-xs]="{'min-height': '70%'}" [ngStyle.xs]="{'min-height': '100%'}" id="hero-header" fxLayout="column" fxLayoutAlign="center center">
+        <img src="../assets/images/voter-hero.png" alt="">
+        <h2 class="mat-headline">What I've been doing lately</h2>
+        <h1 ngClass.gt-sm="mat-display-4" ngClass.lt-md="mat-display-2">Get To Know Me</h1>
+        <mat-icon fxHide.gt-sm>arrow_downward</mat-icon>
+      </div>
+      <div fxFlex="initial">
+        <div fxLayout>
+          <div [fxFlex]="bufferSM" [fxFlex.gt-sm]="bufferMD" [fxFlex.gt-md]="bufferLG"></div>
+          <div fxFlex id="resume-content">
+            <div fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="30px">
+              <div fxLayout fxLayout.lt-md="column" fxLayoutGap="30px">
+                <h3 fxFlex class="mat-title">Technologies</h3>
+                <div fxFlex>
+                  <mat-list>
+                    <h4 matSubheader>Daily Use</h4>
+                    <mat-list-item *ngFor="let skill of primarySkills">
+                      {{skill.name}}
+                    </mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex>
+                  <mat-list>
+                    <h4 matSubheader>Experience With</h4>
+                    <mat-list-item *ngFor="let skill of secondarySkills">
+                      {{skill.name}}
+                    </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row wrap" fxLayoutGap="30px">
+                <h3 fxFlex fxFlex.lt-md="100" class="mat-title">Work Experience</h3>
+                <div fxFlex>
+                </div>
+                <div fxFlex></div>
+              </div>
+              <div fxLayout="row wrap" fxLayoutGap="30px">
+                <h3 fxFlex fxFlex.lt-md="100" class="mat-title">Education</h3>
+                <div fxFlex></div>
+                <div fxFlex></div>
+              </div>
+            </div>
+          </div>
+          <div [fxFlex]="bufferSM" [fxFlex.gt-sm]="bufferMD" [fxFlex.gt-md]="bufferLG"></div>
+        </div>
+      </div>
+      <div fxFlex="initial">
+        <mat-toolbar>
+          <mat-toolbar-row fxLayout fxLayoutAlign="center center">
+            <h4>Get yourself a great new website.</h4>
+          </mat-toolbar-row>
+          <mat-toolbar-row fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+            <a mat-icon-button href="https://twitter.com/pmnevill37" target="_blank"><i class="icon-twitter"></i></a>
+            <a mat-icon-button href="https://www.linkedin.com/in/paulnevill/" target="_blank"><i class="icon-linkedin"></i></a>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
