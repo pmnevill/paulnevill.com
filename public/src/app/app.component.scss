@@ -1,32 +1,39 @@
 @import "../styles";
 
-mat-sidenav {
-  width: 300px;
+mat-toolbar#main-nav {
+  z-index: 2;
+  position: fixed;
 }
-mat-toolbar {
-  z-index: 1;
-}
-#hero-header {
-  background: rgba(mat-color($resume-list-primary, 900), 0.1);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 30px;
-  img {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0.8;
-    z-index: -1;
-    filter: brightness(0.3);
+mat-sidenav-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  mat-sidenav {
+    width: 300px;
   }
-  mat-icon {
-    position: absolute;
-    bottom: 30px;
+  #hero-header {
+    background: rgba(mat-color($resume-list-primary, 900), 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    img {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      opacity: 0.8;
+      z-index: -1;
+      filter: brightness(0.3);
+    }
+
+    mat-icon {
+      position: absolute;
+      bottom: 30px;
+    }
+
+    .mat-headline {
+      font-style: italic;
+    }
   }
-  .mat-headline {
-    font-style: italic;
-  }
-}
-#resume-section {
-  padding: 0 25%;
 }
