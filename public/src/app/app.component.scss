@@ -1,5 +1,3 @@
-@import "../styles";
-
 mat-toolbar#main-nav {
   z-index: 2;
   position: fixed;
@@ -12,28 +10,15 @@ mat-sidenav-container {
   mat-sidenav {
     width: 300px;
   }
-  #hero-header {
-    background: rgba(mat-color($resume-list-primary, 900), 0.1);
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
-
-    img {
-      position: absolute;
-      min-width: 100%;
-      min-height: 100%;
-      opacity: 0.8;
-      z-index: -1;
-      filter: brightness(0.3);
+  mat-sidenav-content {
+    #router-container {
+      overflow: auto;
     }
-
-    mat-icon {
-      position: absolute;
-      bottom: 30px;
-    }
-
-    .mat-headline {
-      font-style: italic;
+    /deep/ .router-flex {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      height: 100%;
     }
   }
 }

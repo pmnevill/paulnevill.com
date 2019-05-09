@@ -1,0 +1,28 @@
+@import "../../styles";
+
+#hero-header {
+  background: rgba(mat-color($resume-list-primary, 900), 0.1);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  .background-image {
+    background: url(../../assets/images/IMG_2297.jpg) no-repeat bottom center;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+    filter: brightness(0.3);
+    height: 100%;
+    width: 100%;
+  }
+
+  mat-icon {
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .mat-headline {
+    font-style: italic;
+  }
+}

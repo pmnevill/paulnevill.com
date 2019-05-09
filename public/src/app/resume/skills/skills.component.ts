@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Skill} from '../app.component';
+import {Skill} from '../resume.component';
 import * as _ from 'lodash';
 
 @Component({
@@ -21,18 +21,9 @@ export class SkillsComponent implements OnInit {
     this.secondarySkills = _.reject(skills, 'primary');
   }
 
-  @Output() addSkill = new EventEmitter<Skill>();
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  addSkillFn() {
-    this.addSkill.emit({
-      name: 'test',
-      primary: true,
-    });
   }
 
 }

@@ -1,0 +1,45 @@
+<div fxLayout="column">
+  <div fxLayout fxLayoutGap="10px" *ngFor="let job of jobs; index as i;">
+    <div fxFlex="initial" fxLayout="column" fxLayoutAlign="start center">
+      <button mat-mini-fab [color]="job.endDate ? '' : 'primary'" [matTooltip]="(job.startDate | date:'MMM yyyy') + ' - ' + ((job.endDate | date:'MMM yyyy') || 'Present')">
+        <mat-icon>{{job.endDate ? 'history' : 'business_center'}}</mat-icon>
+      </button>
+      <mat-divider vertical fxFlex *ngIf="i !== (jobs.length - 1)"></mat-divider>
+    </div>
+    <div fxFlex>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title fxLayoutAlign="start center" fxLayoutGap="15px">
+            <div fxFlex>{{job.employer}}</div>
+            <mat-hint>{{(job.startDate | date:'MMM yyyy') + ' - ' + ((job.endDate | date:'MMM yyyy') || 'Present')}}</mat-hint>
+          </mat-card-title>
+          <mat-card-subtitle>{{job.title}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-accordion>
+            <mat-expansion-panel *ngIf="job.description">
+              <mat-expansion-panel-header>
+                <mat-panel-title fxLayoutGap="10px" fxLayoutAlign="start center">
+                  <mat-icon fxFlex="initial">info</mat-icon>
+                  <div fxFlex>About</div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              {{job.description}}
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngIf="job.skills">
+              <mat-expansion-panel-header>
+                <mat-panel-title fxLayoutGap="10px" fxLayoutAlign="start center">
+                  <mat-icon fxFlex="initial">list</mat-icon>
+                  <div fxFlex>Skills</div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-chip-list>
+                <mat-chip color="accent" disableRipple [selected]="skill.primary" *ngFor="let skill of job.skills">{{skill.name}}</mat-chip>
+              </mat-chip-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
