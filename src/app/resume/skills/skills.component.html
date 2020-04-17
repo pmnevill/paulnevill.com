@@ -1,12 +1,12 @@
-<div fxLayout fxLayout.lt-md="column" fxLayoutGap="30px">
-  <div fxFlex>
+<div fxLayout fxLayoutGap="15px">
+  <div fxFlex="noGrow">
     <h3 class="mat-subheading-2">Daily Use</h3>
     <mat-chip-list>
       <mat-chip color="accent" disableRipple selected *ngFor="let skill of primarySkills">{{skill.name}}</mat-chip>
     </mat-chip-list>
   </div>
   <mat-divider vertical></mat-divider>
-  <div fxFlex>
+  <div fxFlex="noGrow">
     <h3 class="mat-subheading-2">Experience With</h3>
     <mat-chip-list>
       <mat-chip color="accent" *ngFor="let skill of secondarySkills">{{skill.name}}</mat-chip>

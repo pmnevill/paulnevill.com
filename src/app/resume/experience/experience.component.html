@@ -16,28 +16,19 @@
           <mat-card-subtitle>{{job.title}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <mat-accordion>
-            <mat-expansion-panel *ngIf="job.description">
-              <mat-expansion-panel-header>
-                <mat-panel-title fxLayoutGap="10px" fxLayoutAlign="start center">
-                  <mat-icon fxFlex="initial">info</mat-icon>
-                  <div fxFlex>About</div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              {{job.description}}
-            </mat-expansion-panel>
-            <mat-expansion-panel *ngIf="job.skills">
-              <mat-expansion-panel-header>
-                <mat-panel-title fxLayoutGap="10px" fxLayoutAlign="start center">
-                  <mat-icon fxFlex="initial">list</mat-icon>
-                  <div fxFlex>Skills</div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
+          <div fxLayout fxLayoutGap="15px">
+            <div fxFlex="40">
+              <h3>About</h3>
+              <p>{{job.description}}</p>
+            </div>
+            <mat-divider vertical></mat-divider>
+            <div fxFlex="noGrow">
+              <h3>Skills</h3>
               <mat-chip-list>
                 <mat-chip color="accent" disableRipple [selected]="skill.primary" *ngFor="let skill of job.skills">{{skill.name}}</mat-chip>
               </mat-chip-list>
-            </mat-expansion-panel>
-          </mat-accordion>
+            </div>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>

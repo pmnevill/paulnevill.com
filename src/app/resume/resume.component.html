@@ -1,8 +1,8 @@
 <div fxLayout="column" fxFlex fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="30px">
   <div [ngStyle.gt-xs]="{'min-height': '70%'}" [ngStyle.xs]="{'min-height': '100%'}" id="hero-header" fxLayout="column" fxLayoutAlign="center center">
     <div class="background-image"></div>
-    <h2 class="mat-headline">What I've been doing lately</h2>
-    <h1 ngClass.gt-sm="mat-display-4" ngClass.lt-md="mat-display-2">Get To Know Me</h1>
+    <h2 class="mat-headline">Get To Know Me</h2>
+    <h1 ngClass.gt-sm="mat-display-4" ngClass.lt-md="mat-display-2" align="center">What I've been doing lately</h1>
     <mat-icon fxHide.gt-sm>arrow_downward</mat-icon>
   </div>
   <div fxFlex="initial">
@@ -18,12 +18,6 @@
             <h3 fxFlex="200px" fxFlex.lt-md="100" class="mat-title">Work Experience</h3>
             <app-experience [jobs]="jobs" fxFlex fxFlexOffset.lt-md="20px"></app-experience>
           </div>
-          <!--<div fxLayout="row wrap" fxLayoutGap="30px">-->
-            <!--<h3 fxFlex="200px" fxFlex.lt-md="100" class="mat-title">Education</h3>-->
-            <!--<div fxFlex fxFlexOffset.lt-md="20px">-->
-              <!--Coming Soon...-->
-            <!--</div>-->
-          <!--</div>-->
         </div>
       </div>
       <div [fxFlex]="bufferSM" [fxFlex.gt-sm]="bufferMD" [fxFlex.gt-md]="bufferLG"></div>
