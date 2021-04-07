@@ -14,7 +14,7 @@ mat-sidenav-container {
     #router-container {
       overflow: auto;
     }
-    /deep/ .router-flex {
+    ::ng-deep .router-flex {
       display: flex;
       flex: 1 1 auto;
       flex-direction: column;
