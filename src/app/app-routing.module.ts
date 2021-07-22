@@ -9,15 +9,13 @@ const appRoutes: Routes = [
   },
   {
     path: 'resume',
-    loadChildren: './resume/resume.module#ResumeModule',
+    loadChildren: () => import('./resume/resume.module').then(m => m.ResumeModule),
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-    )
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })
   ],
   exports: [
     RouterModule
