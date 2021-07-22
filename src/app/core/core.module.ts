@@ -50,12 +50,6 @@ const matModules = [
     matModules,
     FlexLayoutModule,
   ],
-  providers: [
-    {
-      provide: MAT_STEPPER_GLOBAL_OPTIONS,
-      useValue: { displayDefaultIndicatorType: false }
-    }
-  ]
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {

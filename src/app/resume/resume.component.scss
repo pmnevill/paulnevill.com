@@ -1,10 +1,14 @@
 @import "../../styles";
 
+.resume-container {
+  height: 100%;
+}
 #hero-header {
   background: rgba(mat-color($resume-list-primary, 900), 0.1);
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  color: $light-primary-text;
 
   .background-image {
     background: url(../../assets/images/IMG_2297.jpg) no-repeat bottom center;

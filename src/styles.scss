@@ -2,7 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
-@import '~src/assets/icomoon/style.css';
+@import 'assets/icomoon/style';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,12 +20,17 @@ $resume-list-accent: mat-palette($mat-red, 800);
 $resume-list-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$resume-list-theme: mat-dark-theme($resume-list-primary, $resume-list-accent, $resume-list-warn);
+$resume-list-light-theme: mat-light-theme($resume-list-primary, $resume-list-accent, $resume-list-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($resume-list-theme);
+// Create the theme object (a Sass map containing all of the palettes).
+$resume-list-dark-theme: mat-dark-theme($resume-list-primary, $resume-list-accent, $resume-list-warn);
+
+.light-theme {
+  @include angular-material-theme($resume-list-light-theme);
+}
+.dark-theme {
+  @include angular-material-theme($resume-list-dark-theme);
+}
 
 /* You can add global styles to this file, and also import other style files */
 
