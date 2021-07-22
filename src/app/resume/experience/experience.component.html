@@ -1,36 +1,3 @@
 <div fxLayout="column">
-  <div fxLayout fxLayoutGap="10px" *ngFor="let job of jobs; index as i;">
-    <div fxFlex="initial" fxLayout="column" fxLayoutAlign="start center">
-      <button mat-mini-fab [color]="job.endDate ? '' : 'primary'" [matTooltip]="(job.startDate | date:'MMM yyyy') + ' - ' + ((job.endDate | date:'MMM yyyy') || 'Present')">
-        <mat-icon>{{job.endDate ? 'history' : 'business_center'}}</mat-icon>
-      </button>
-      <mat-divider vertical fxFlex *ngIf="i !== (jobs.length - 1)"></mat-divider>
-    </div>
-    <div fxFlex>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title fxLayoutAlign="start center" fxLayoutGap="15px">
-            <div fxFlex>{{job.employer}}</div>
-            <mat-hint>{{(job.startDate | date:'MMM yyyy') + ' - ' + ((job.endDate | date:'MMM yyyy') || 'Present')}}</mat-hint>
-          </mat-card-title>
-          <mat-card-subtitle>{{job.title}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <div fxLayout fxLayoutGap="15px">
-            <div fxFlex="40">
-              <h3>About</h3>
-              <p>{{job.description}}</p>
-            </div>
-            <mat-divider vertical></mat-divider>
-            <div fxFlex="noGrow">
-              <h3>Skills</h3>
-              <mat-chip-list>
-                <mat-chip color="accent" disableRipple [selected]="skill.primary" *ngFor="let skill of job.skills">{{skill.name}}</mat-chip>
-              </mat-chip-list>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </div>
+  <app-job *ngFor="let job of jobs; index as i;" [job]="job" [last]="i === (jobs.length - 1)" [loading]="loading"></app-job>
 </div>

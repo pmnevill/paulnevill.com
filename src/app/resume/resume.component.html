@@ -1,4 +1,4 @@
-<div fxLayout="column" fxFlex fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="30px">
+<div class="resume-container" fxLayout="column" fxFlex fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="30px">
   <div [ngStyle.gt-xs]="{'min-height': '70%'}" [ngStyle.xs]="{'min-height': '100%'}" id="hero-header" fxLayout="column" fxLayoutAlign="center center">
     <div class="background-image"></div>
     <h2 class="mat-headline">Get To Know Me</h2>
@@ -10,14 +10,12 @@
       <div [fxFlex]="bufferSM" [fxFlex.gt-sm]="bufferMD" [fxFlex.gt-md]="bufferLG"></div>
       <div fxFlex id="resume-content">
         <div fxLayout="column" fxLayoutGap="100px">
-          <div fxLayout="row wrap" fxLayoutGap="30px">
-            <h3 fxFlex="200px" fxFlex.lt-md="100" class="mat-title">Technologies</h3>
-            <app-skills fxFlex fxFlexOffset.lt-md="20px" [skills]="skills"></app-skills>
-          </div>
-          <div fxLayout="row wrap" fxLayoutGap="30px">
-            <h3 fxFlex="200px" fxFlex.lt-md="100" class="mat-title">Work Experience</h3>
-            <app-experience [jobs]="jobs" fxFlex fxFlexOffset.lt-md="20px"></app-experience>
-          </div>
+          <app-section label="Technologies">
+            <app-skills selectable fxFlex fxFlexOffset.lt-md="20px" [skills]="skills" [loading]="skillsLoading" (skillSelectionChange)="alertSkillSelectionChange($event)"></app-skills>
+          </app-section>
+          <app-section label="Work Experience">
+            <app-experience [jobs]="jobs" [loading]="jobsLoading" fxFlex></app-experience>
+          </app-section>
         </div>
       </div>
       <div [fxFlex]="bufferSM" [fxFlex.gt-sm]="bufferMD" [fxFlex.gt-md]="bufferLG"></div>

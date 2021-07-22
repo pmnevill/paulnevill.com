@@ -1,0 +1,15 @@
+<h4>{{label}} {{selectable}}</h4>
+<mat-chip-list multiple *ngIf="skills?.length && !loading else noSkillsTmpl">
+  <mat-chip [color]="color" [selected]="skillChip?.active || !selectable" [disableRipple]="!selectable" *ngFor="let skillChip of skills" (click)="toggleSkill(skillChip)"><span class="text-ellipsis">{{skillChip?.skill?.name}}</span></mat-chip>
+</mat-chip-list>
+<ng-template #noSkillsTmpl>
+  <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start center" *ngIf="!loading else dummiesTmpl">
+    <mat-icon>sentiment_very_dissatisfied</mat-icon>
+    <mat-hint>No Data</mat-hint>
+  </div>
+  <ng-template #dummiesTmpl>
+    <mat-chip-list>
+      <mat-chip disabled *ngFor="let dummy of dummies">{{dummy}}</mat-chip>
+    </mat-chip-list>
+  </ng-template>
+</ng-template>

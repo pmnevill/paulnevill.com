@@ -1,0 +1,28 @@
+:host {
+  margin-bottom: 15px;
+}
+mat-icon.experience-icon {
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+mat-card {
+  margin-bottom: 30px;
+  mat-card-header {
+    ::ng-deep {
+      .mat-card-header-text {
+        width: 100%;
+      }
+    }
+    .job-title {
+      text-align: right;
+    }
+  }
+  mat-list.job-details-list {
+    mat-list-item {
+      div[mat-line] {
+        white-space: normal;
+      }
+    }
+  }
+}

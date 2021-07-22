@@ -1,0 +1,58 @@
+<div id="router-container" fxLayout="column">
+  <mat-toolbar color="primary" class="mat-elevation-z10" id="main-nav" fxLayout fxLayoutAlign="start center" fxLayoutGap="15px">
+    <div fxHide.lt-sm fxLayout>
+      <div matTooltip="In progress">
+        <button mat-button disabled>Home</button>
+        <button mat-button disabled>About</button>
+      </div>
+      <a mat-button [routerLink]="">Resume</a>
+    </div>
+    <div fxHide.gt-xs>
+      <button mat-icon-button [matMenuTriggerFor]="navMenu"><mat-icon>more_vert</mat-icon></button>
+      <mat-menu #navMenu="matMenu">
+        <button mat-menu-item disabled>Home</button>
+        <button mat-menu-item disabled>About</button>
+        <a mat-menu-item [routerLink]="">Resume</a>
+      </mat-menu>
+    </div>
+    <mat-divider vertical style="height: 100%;"></mat-divider>
+    <h1 fxFlex>Paul Nevill</h1>
+    <div fxFlex="initial">
+      <a mat-icon-button href="https://github.com/pmnevill/paulnevill.com" target="_blank"><mat-icon class="icon-github"></mat-icon></a>
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>apps</mat-icon></button>
+      <button mat-icon-button disabled><mat-icon>account_circle</mat-icon></button>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container hasBackdrop fxFlex>
+    <mat-sidenav #sidenav mode="over" position="end">
+      <mat-toolbar>Projects</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item href="http://wish-list.paulnevill.com">Wish Lists</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <mat-toolbar fxLayout fxLayoutAlign="center center" fxLayoutGap="15px">
+    <h4>Let's stay in touch</h4>
+    <mat-divider vertical style="height: 50%;"></mat-divider>
+    <div>
+      <div fxHide.lt-sm>
+        <a mat-icon-button href="https://twitter.com/pmnevill37" target="_blank"><mat-icon class="icon-twitter"></mat-icon></a>
+        <a mat-icon-button href="https://www.linkedin.com/in/paulnevill/" target="_blank"><mat-icon class="icon-linkedin"></mat-icon></a>
+        <a mat-icon-button href="mailto:pmnevill@gmail.com"><mat-icon>email</mat-icon></a>
+      </div>
+      <div fxHide.gt-xs>
+        <button mat-icon-button [matMenuTriggerFor]="contactMenu"><mat-icon>alternate_email</mat-icon></button>
+        <mat-menu #contactMenu="matMenu">
+          <a mat-menu-item href="https://twitter.com/pmnevill37" target="_blank"><mat-icon class="icon-twitter"></mat-icon> Twitter</a>
+          <a mat-menu-item href="https://www.linkedin.com/in/paulnevill/" target="_blank"><mat-icon class="icon-linkedin"></mat-icon> LinkedIn</a>
+          <a mat-menu-item href="mailto:pmnevill@gmail.com"><mat-icon>email</mat-icon> Email</a>
+        </mat-menu>
+      </div>
+    </div>
+    <mat-divider vertical style="height: 50%;"></mat-divider>
+    <button mat-icon-button (click)="toggleDarkMode()"><mat-icon>dark_mode</mat-icon></button>
+  </mat-toolbar>
+</div>

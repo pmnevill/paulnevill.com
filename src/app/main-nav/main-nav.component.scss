@@ -1,0 +1,17 @@
+:host, #router-container {
+  height: 100%;
+}
+mat-sidenav-container {
+  mat-sidenav {
+    width: 300px;
+  }
+  mat-sidenav-content {
+    #router-container {
+      overflow: auto;
+    }
+    ::ng-deep .router-flex {
+      flex: 1 1 auto;
+      height: 100%;
+    }
+  }
+}

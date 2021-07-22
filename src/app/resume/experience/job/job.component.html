@@ -1,0 +1,38 @@
+<div fxLayout fxLayoutGap="10px">
+  <div fxFlex="initial" fxLayout="column"  fxLayoutGap="15px" fxLayoutAlign="start center">
+    <mat-icon class="experience-icon" [color]="job.endDate ? '' : 'primary'">{{job.endDate ? 'history' : 'business_center'}}</mat-icon>
+    <mat-divider vertical fxFlex *ngIf="!last"></mat-divider>
+  </div>
+  <div fxFlex>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title fxLayoutAlign="start center" fxLayoutGap="15px">
+          <div fxFlex>{{job.employer}}</div>
+          <mat-hint class="job-title mat-typography">{{job.title}}</mat-hint>
+        </mat-card-title>
+        <mat-card-subtitle>{{(job.startDate | date:'MMM yyyy') + ' - ' + ((job.endDate | date:'MMM yyyy') || 'Present')}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout fxLayout.lt-md="column" fxLayoutGap="20px">
+          <div fxFlex.gt-sm="50">
+            <div>
+              <h4>Description</h4>
+              <div>{{job.description}}</div>
+            </div>
+            <div *ngIf="job?.responsibilities?.length">
+              <h4>Responsibilities</h4>
+              <mat-list dense class="job-details-list">
+                <mat-list-item *ngFor="let responsibility of job.responsibilities">
+                  <mat-icon mat-list-icon>check_circle</mat-icon>
+                  <div mat-line>{{responsibility}}</div>
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </div>
+          <mat-divider vertical fxHide.lt-md></mat-divider>
+          <app-skills fxFlex [skills]="job.skills" [loading]="loading"></app-skills>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
